@@ -4,17 +4,23 @@ import { useSearchParams } from "next/navigation";
 
 const ConfirmationPage = () => {
   const searchParams = useSearchParams();
+  const date = searchParams.get("date");
+  const time = searchParams.get("time");
+  const guests = searchParams.get("guests");
+  const name = searchParams.get("name");
+  const contact = searchParams.get("contact");
 
   return (
     <div className="confirmation-page">
       <h1>Booking Confirmation</h1>
-      <div className="summary-details">
-        <p><strong>Date:</strong> {searchParams.get("date")}</p>
-        <p><strong>Time:</strong> {searchParams.get("time")}</p>
-        <p><strong>Guests:</strong> {searchParams.get("guests")}</p>
-        <p><strong>Name:</strong> {searchParams.get("name")}</p>
-        <p><strong>Contact:</strong> {searchParams.get("contact")}</p>
-      </div>
+      <div>
+      <h1>Booking Confirmation</h1>
+      <p>Date: {date}</p>
+      <p>Time: {time}</p>
+      <p>Guests: {guests}</p>
+      <p>Name: {name}</p>
+      <p>Contact: {contact}</p>
+    </div>
       <button
         onClick={() => window.location.replace("/")}
         className="return-button"

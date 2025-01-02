@@ -1,5 +1,9 @@
 import ConfirmationPage from "../components/ConfirmationPage";
 
 export default function Confirmation() {
-  return <ConfirmationPage />;
+  return  (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ConfirmationPage />
+    </Suspense>
+  );
 }
